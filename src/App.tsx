@@ -20,9 +20,9 @@ const App = () => {
   return (
     <>
       <div>
-        <img width="300px" src={cuteDoggo} className="logo" alt="Cute Doggo" />
+        <img src={cuteDoggo} className="image" alt="Cute Doggo" />
       </div>
-      <h1>Will you be my Valentine?</h1>
+      <h1>Will you be my Galentine?</h1>
       <div className="button_container">
         <button className="button" onClick={handleAcceptance}>
           Yes
@@ -44,12 +44,7 @@ const App = () => {
       </div>
       <div className="gif_container">
         {isExcitementShown && (
-          <img
-            width="300px"
-            src={hoorayGif}
-            className="logo"
-            alt="Cute Doggo"
-          />
+          <img src={hoorayGif} className="image" alt="Hooray Gif" />
         )}
       </div>
     </>

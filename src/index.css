@@ -2,8 +2,8 @@
   font-family: 'Noto Serif', serif;
   line-height: 1.5;
   font-weight: 400;
+  overflow: hidden;
 
-  color-scheme: light dark;
   color: #251605;
   background-color: #fef6ed;
 
@@ -42,4 +42,10 @@ button {
 }
 button:hover {
   background-color: #f7b7a4;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4em;
+  }
 }

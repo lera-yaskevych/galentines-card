@@ -29,6 +29,17 @@
   height: auto;
 }
 
+.hint {
+  color: #c08263;
+}
+
+.signature {
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+}
+
 @media (max-width: 768px) {
   .image {
     width: 150px;

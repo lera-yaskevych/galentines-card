@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import cuteDoggo from '/cute-doggo.png';
 import hoorayGif from '/hooray.gif';
-import './app.css';
+import './App.css';
 import { getDisappointmentText, getReliefText } from './lib/helpers';
+import Signature from './components/Signature';
+import Image from './components/Image';
+import Button from './components/Button';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -20,18 +23,17 @@ const App = () => {
   return (
     <>
       <div>
-        <img src={cuteDoggo} className="image" alt="Cute Doggo" />
+        <Image src={cuteDoggo} alt="Cute Doggo" />
       </div>
       <h1>Will you be my Galentine?</h1>
-      <div className="button_container">
-        <button className="button" onClick={handleAcceptance}>
-          Yes
-        </button>
-        {count > 5 || (
-          <button className="button" onClick={handleRejection}>
-            No
-          </button>
+      <div className="text_container">
+        {count === 0 && (
+          <p className="hint">{`(Your destiny is predefined, but you can try testing the No button)`}</p>
         )}
+      </div>
+      <div className="button_container">
+        <Button onClick={handleAcceptance}>Yes</Button>
+        {count > 5 || <Button onClick={handleRejection}>No</Button>}
       </div>
       <div className="text_container">
         {count > 0 && (
@@ -43,10 +45,9 @@ const App = () => {
         )}
       </div>
       <div className="gif_container">
-        {isExcitementShown && (
-          <img src={hoorayGif} className="image" alt="Hooray Gif" />
-        )}
+        {isExcitementShown && <Image src={hoorayGif} alt="Hooray Gif" />}
       </div>
+      <Signature />
     </>
   );
 };
